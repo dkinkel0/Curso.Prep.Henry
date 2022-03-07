@@ -4,22 +4,23 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
-  /* return nombre[0].toUpperCase() + nombre.slice(1); */
-  
+  var nombre = 'mario'
   return nombre.charAt(0).toUpperCase() + nombre.slice(1)
 }
+
+
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
   //Tu código:
-  return cb();
+  return cb()
 }
 
 function operacionMatematica(n1, n2, cb) {
   //Vamos a recibir una función que realiza una operación matemática como callback junto con dos números.
   //Devolver el callback pasándole como argumentos los números recibidos.
   //Tu código:
-  return cb(n1, n2);
+  return cb(n1,n2)
 }
 
 function sumarArray(numeros, cb) {
@@ -27,14 +28,11 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  /* var suma = numeros.reduce(function(acc, elemento){
-    return acc + elemento;
-  }, 0);
-  cb(suma); */
   cb(numeros.reduce(function(suma,elemento){
     return suma + elemento
   }))
 }
+
 
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
@@ -43,15 +41,12 @@ function forEach(array, cb) {
   array.forEach(cb);
 }
 
+
 function map(array, cb) {
   // Crea un nuevo array
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
- /*  var nuevoarray = array.map(function(elem){
-    return cb(elem);
-  });
-  return nuevoarray; */
   return array.map(cb)
 }
 
@@ -59,23 +54,11 @@ function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  
-  /* var str_a = [];
-  
-  function encontrar_a(elemento){
-    if(elemento.startsWith('A') || elemento.startsWith('a')){
-      str_a.push(elemento);
-    }
-    return str_a;
-  }
-  array.forEach(encontrar_a);
-  return str_a; */
   return array.filter(function(elemento){
     return elemento[0] === 'a'
   })
-  
 }
-  
+
 
 // No modificar nada debajo de esta línea
 // --------------------------------
@@ -89,3 +72,18 @@ module.exports = {
   map,
   filter
 };
+
+
+
+/* const array = [
+  { id: 1, username: "Mapper"},
+  { id: 2, username: "Finder"},
+  { id: 3, username: "Eaching"}
+];
+
+const filtered = array.filter(function(element){
+  return element.id > 2;
+});
+
+console.log(filtered);
+//Output: [{ id: "3", username: "Eaching"}] */
